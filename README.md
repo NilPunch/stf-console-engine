@@ -3,7 +3,7 @@ A simple console engine I made a year ago inspired by https://github.com/OneLone
 
 There are a lot of dubious solutions here that I'm not really happy with, but there are also pretty good solutions that allowed me to achieve excellent usability and good performance. The code may seem a little confusing, but using this engine looks very clean.
 
-## Usage exampleы
+## Usage examples
 
 Here's a simple program that outputs this:
 
