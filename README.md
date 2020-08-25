@@ -37,8 +37,10 @@ int main()
 And here is the result:
 
 
-And here's another example of the Update () function that draws my logo:
+And here's another example of the Update() function that draws my logo:
 ![alt text](https://github.com/NilPunch/stf-console-engine/blob/text-editing/images/Capture.PNG)
+
+Code:
 ```cplusplus
 void Update() override
     {
@@ -60,7 +62,7 @@ void Update() override
 		// Draw back lines
 		for (int i = 0; i < 3; ++i)
 		{
-			for (int j = 0; j < 3; ++j) // Im not implement the way to draw fat lines right now, so draw them manually
+			for (int j = 0; j < 3; ++j) // Im not implement the way to draw thick lines right now, so draw them manually
 			{
 				int offset = j - 1;
 				DrawLine(0, boundaryOffset + treshold * i + offset, ScreenWidth() - 1, boundaryOffset + treshold * (i + 1) + offset, QUAD::SOLID, colorPalette[i]);
