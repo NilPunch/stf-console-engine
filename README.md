@@ -36,6 +36,8 @@ int main()
 ```
 And here is the result:
 
+
+And here's another example of the Update () function that draws my logo:
 ```cplusplus
 void Update() override
     {
