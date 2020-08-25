@@ -38,6 +38,7 @@ And here is the result:
 
 
 And here's another example of the Update () function that draws my logo:
+[alt text](https://github.com/NilPunch/stf-console-engine/images/Capture.PNG)
 ```cplusplus
 void Update() override
     {
