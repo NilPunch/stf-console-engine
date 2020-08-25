@@ -35,9 +35,11 @@ int main()
 }
 ```
 And here is the result:
+
 ![alt text](https://github.com/NilPunch/stf-console-engine/blob/text-editing/images/Capture1.PNG)
 
 And here's another example of the Update() function that draws my logo:
+
 ![alt text](https://github.com/NilPunch/stf-console-engine/blob/text-editing/images/Capture.PNG)
 
 Code:
