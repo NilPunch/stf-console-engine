@@ -1,9 +1,15 @@
 # stf-console-engine
 A simple console engine I made a year ago inspired by https://github.com/OneLoneCoder.
 
-There are a lot of dubious solutions here that I'm not really happy with, but there are also pretty good solutions that allowed me to achieve excellent usability and good performance.
+There are a lot of dubious solutions here that I'm not really happy with, but there are also pretty good solutions that allowed me to achieve excellent usability and good performance. The code may seem a little confusing, but using this engine looks very clean.
 
-The code may seem a little confusing, but using this engine looks very clean. Just take a look at this little program:
+## Usage exampleы
+
+Here's a simple program that outputs this:
+
+![alt text](https://github.com/NilPunch/stf-console-engine/blob/text-editing/images/Capture1.PNG)
+
+Just take a look at this little program:
 ```cplusplus
 #include <stf/ConsoleEngine.h>
 
@@ -34,52 +40,47 @@ int main()
     return 0;
 }
 ```
-And here is the result:
 
-![alt text](https://github.com/NilPunch/stf-console-engine/blob/text-editing/images/Capture1.PNG)
+And here's another example of code that draws my logo.
 
-And here's another example of the Update() function that draws my logo:
+Output:
 
 ![alt text](https://github.com/NilPunch/stf-console-engine/blob/text-editing/images/Capture.PNG)
 
 Code:
 ```cplusplus
 void Update() override
-    {
-		if (GetKey(KEY::ESC).Pressed)
-			Quit();
-
-		// Fill screen with white
-		DrawRect(iVec2{ 0, 0 }, Screen(), QUAD::SOLID, COLOR::FG_WHITE | COLOR::BG_WHITE);
-
-		constexpr const short colorPalette[3] = 
+{
+	if (GetKey(KEY::ESC).Pressed)
+		Quit();
+	// Fill screen with white
+	DrawRect(iVec2{ 0, 0 }, Screen(), QUAD::SOLID, COLOR::FG_WHITE | COLOR::BG_WHITE);
+	constexpr const short colorPalette[3] = 
+	{
+		COLOR::FG_MAGENTA | COLOR::BG_MAGENTA,
+		COLOR::FG_CYAN | COLOR::BG_CYAN,
+		COLOR::FG_DARK_YELLOW | COLOR::BG_DARK_YELLOW
+	};
+	constexpr const int boundaryOffset = 3;
+	constexpr const int treshold = 8;
+	// Draw back lines
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j) // Im not implement the way to draw thick lines right now, so draw them manually
 		{
-			COLOR::FG_MAGENTA | COLOR::BG_MAGENTA,
-			COLOR::FG_CYAN | COLOR::BG_CYAN,
-			COLOR::FG_DARK_YELLOW | COLOR::BG_DARK_YELLOW
-		};
-		constexpr const int boundaryOffset = 3;
-		constexpr const int treshold = 8;
-
-		// Draw back lines
-		for (int i = 0; i < 3; ++i)
-		{
-			for (int j = 0; j < 3; ++j) // Im not implement the way to draw thick lines right now, so draw them manually
-			{
-				int offset = j - 1;
-				DrawLine(0, boundaryOffset + treshold * i + offset, ScreenWidth() - 1, boundaryOffset + treshold * (i + 1) + offset, QUAD::SOLID, colorPalette[i]);
-			}
+			int offset = j - 1;
+		DrawLine(0, boundaryOffset + treshold * i + offset, ScreenWidth() - 1, boundaryOffset + treshold * (i + 1) + offset, QUAD::SOLID, colorPalette[i]);
 		}
-
-		// Draw letter N
-		for (int i = 0; i < 3; ++i)
-		{
-			int offset = i - 1;
-			DrawLine(0 + offset, ScreenHeight() - 1, ScreenWidth() / 2 + offset, 0, QUAD::SOLID, COLOR::FG_BLACK | COLOR::BG_BLACK);
-			DrawLine(ScreenWidth() / 2 + offset, ScreenHeight() - 1, ScreenWidth() / 2 + offset, 0, QUAD::SOLID, COLOR::FG_BLACK | COLOR::BG_BLACK);
-			DrawLine(ScreenWidth() / 2 + offset, ScreenHeight() - 1, ScreenWidth() - 1, 0 + offset, QUAD::SOLID, COLOR::FG_BLACK | COLOR::BG_BLACK);
-		}
-    }
+	}
+	// Draw letter N
+	for (int i = 0; i < 3; ++i)
+	{
+		int offset = i - 1;
+		DrawLine(0 + offset, ScreenHeight() - 1, ScreenWidth() / 2 + offset, 0, QUAD::SOLID, COLOR::FG_BLACK | COLOR::BG_BLACK);
+		DrawLine(ScreenWidth() / 2 + offset, ScreenHeight() - 1, ScreenWidth() / 2 + offset, 0, QUAD::SOLID, COLOR::FG_BLACK | COLOR::BG_BLACK);
+		DrawLine(ScreenWidth() / 2 + offset, ScreenHeight() - 1, ScreenWidth() - 1, 0 + offset, QUAD::SOLID, COLOR::FG_BLACK | COLOR::BG_BLACK);
+	}
+}
 ```
 
 # License
