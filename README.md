@@ -3,7 +3,7 @@ A simple console engine I made a year ago inspired by https://github.com/OneLone
 
 There are a lot of dubious solutions here that I'm not really happy with, but there are also pretty good solutions that allowed me to achieve excellent usability and good performance.
 
-The code may seem a little confusing, but using this engine looks very clean. Just take a look at this:
+The code may seem a little confusing, but using this engine looks very clean. Just take a look at this little program:
 ```cplusplus
 #include <stf/ConsoleEngine.h>
 
@@ -35,7 +35,7 @@ int main()
 }
 ```
 And here is the result:
-
+![alt text](https://github.com/NilPunch/stf-console-engine/blob/text-editing/images/Capture1.PNG)
 
 And here's another example of the Update() function that draws my logo:
 ![alt text](https://github.com/NilPunch/stf-console-engine/blob/text-editing/images/Capture.PNG)
